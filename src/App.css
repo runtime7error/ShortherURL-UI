@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --disabled-color: #6c757d;
+  --bg-glass: rgba(255, 255, 255, 0.2);
+  --border-glass: rgba(255, 255, 255, 0.3);
+  --shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 400px;
+  width: 90%;
+  padding: 16px;
+  text-align: center;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  box-shadow: var(--shadow-glass);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input:focus {
+  border-color: var(--primary-color);
+}
+
+.button {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.button:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.02);
+}
+
+.button:disabled {
+  background-color: var(--disabled-color);
+  cursor: not-allowed;
+}
+
+.result {
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  word-break: break-all;
+  transition: background 0.3s;
+}
+
+.result:hover {
+  background: #e9ecef;
+}
+
+.short-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.short-link:hover {
+  text-decoration: underline;
+  color: var(--primary-hover);
+}
+
+.copy-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.copy-button:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 12px;
+  }
+
+  .input {
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: 14px;
+  }
+
+  .result {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .short-link {
+    margin-bottom: 8px;
+  }
+}
