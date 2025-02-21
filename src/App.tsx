@@ -11,7 +11,7 @@ export default function UrlShortener() {
     if (!url) return;
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:3000/api/links/shorten`, {
+      const res = await fetch(`https://shortherurl-production.up.railway.app/api/links/shorten`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url }),
